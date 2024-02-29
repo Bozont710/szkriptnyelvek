@@ -1,0 +1,3 @@
+Házi:
+    string1
+    string2
