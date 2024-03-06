@@ -30,10 +30,10 @@
 # Vagyis donuts(5) visszatérési értéke 'Fánkok száma: 5', míg
 # donuts(23) visszatérési értéke 'Fánkok száma: sok'
 def donuts(count):
-    ret = f"Fánkok száma: {count}"
     if count >= 10:
-        ret = f"Fánkok száma: sok"
-    return ret
+        return f"Fánkok száma: sok"
+    else:
+        return f"Fánkok száma: {count}"
 
 
 # B. both_ends
@@ -43,12 +43,10 @@ def donuts(count):
 # Ha az input sztring hossza 2-nél rövidebb, akkor egy üres
 # sztringet adjunk vissza.
 def both_ends(s):
-    ret = ""
     if len(s) < 2:
-        ret = ""
+        return ""
     else:
-        ret = ret + s[2] + s[-3]
-    return ret
+        return s[:2] + s[-2:]
 
 
 # C. fix_start
@@ -60,8 +58,9 @@ def both_ends(s):
 # Tipp: s.replace(stra, strb) egy olyan sztringet ad vissza,
 # melyben az stra összes előfordulása ki van cserélve strb-re.
 def fix_start(s):
-    # TODO...
-    return
+    first = s[0]
+    return first + s[1:].replace(first, "*")
+    
 
 
 # D. mix_up
@@ -73,8 +72,10 @@ def fix_start(s):
 #   'dog', 'dinner' -> 'dig donner'
 # Feltételezhetjük, hogy a bemeneti sztringek hossza legalább 2.
 def mix_up(a, b):
-    # TODO...
-    return
+    swap = a[:2]
+    a = a.replace(a[:2], b[:2])
+    b = b.replace(b[:2], swap)
+    return f"{a} {b}"
 
 
 # Egy egyszerű teszt fv. Kiírja az egyes fv.-ek visszaadott értékét, ill.
