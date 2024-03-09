@@ -3,7 +3,7 @@
 
 def main():
     num = input("Please enter an integer: ")
-    print(f"{num} in reverse is {num[::-1]}")
+    print(f"{num} in reverse is {int(num[::-1])}")
 #ENDmain
     
     
