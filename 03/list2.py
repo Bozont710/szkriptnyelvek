@@ -20,8 +20,15 @@
 # Példa: [1, 2, 2, 3] -> [1, 2, 3].
 # Készíthetünk egy új listát, vagy módosíthatjuk a bemeneti listát is.
 def remove_adjacent(nums):
-    # TODO...
-    return
+    previous = 0
+    ret = nums[:]
+    for n in nums:
+        if nums.index(n) == max(nums):
+            previous = max(nums)-1
+        if n == previous:
+            ret.remove(n)
+        previous = n
+    return ret
 
 # E.
 # Bemenet: két lista, mindkettőben az elemek növekvő sorrendbe rendezve.
