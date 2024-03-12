@@ -2,31 +2,20 @@
 
 
 def decode(str):
-    str = str.replace("A", "C")
-    str = str.replace("C", "E")
-    str = str.replace("D", "F")
-    str = str.replace("Y", "A")
-    str = str.replace("a", "c")
-    str = str.replace("b", "d")
-    str = str.replace("c", "e")
-    str = str.replace("e", "g")
-    str = str.replace("g", "i")
-    str = str.replace("h", "j")
-    str = str.replace("k", "m")
-    str = str.replace("l", "n")
-    str = str.replace("m", "o")
-    str = str.replace("n", "p")
-    str = str.replace("p", "r")
-    str = str.replace("q", "s")
-    str = str.replace("r", "t")
-    str = str.replace("s", "u")
-    str = str.replace("t", "v")
-    str = str.replace("w", "y")
-    str = str.replace("x", "z")
-    str = str.replace("y", "a")
-    return str
+    ret = ""
+    for n in str:
+        if ord(n) <= 122 and ord(n) >= 65 and not (ord(n)<=96 and ord(n)>=91):
+            if ord(n) > 120 and ord(n) < 122:
+                ret += chr(ord(n)-24)
+            elif ord(n) > 88 and ord(n) < 90:
+                ret += chr(ord(n)-24)
+            else:
+                ret += chr(ord(n)+2)
+        else:
+            ret += n
+    return ret
 #ENDdecode
-#abcdefghijklmnopqrstuvwxyz
+
 
 def main():
     mess = """Cbcq Dgyk!
