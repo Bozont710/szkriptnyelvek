@@ -5,11 +5,11 @@ def diamond(sz):
     n = 1
     while n < sz:
         text = "*"*n 
-        print(text.center(100))
+        print(text.center(sz))
         n += 2
     while n > 0:
         text = "*"*n 
-        print(text.center(100))        
+        print(text.center(sz))        
         n -= 2
 #ENDdiamond
 
