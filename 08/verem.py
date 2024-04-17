@@ -42,7 +42,7 @@ class Verem:
         return self.data.count(elem)
     #ENDszamlal
 
-    def masol(self, name):
+    def masol(self):
         """Egy másolatot készít a veremről"""
         name = self.data.copy()
         return name
@@ -58,14 +58,14 @@ class Verem:
         self.data.sort()
     #ENDsorbarendez
 
-    def kivesz(self, elem=0):
+    def kivesz(self, index=-1):
         """Eltávolítja az adott elemet, ha nincs megadva, akkor az utolsót"""
-        if elem == 0 and self.ures():
+        if index == 0 and self.ures():
             return None
-        elif elem == 0:
-            return self.data.pop(self.meret()-1)
+        elif index == 0:
+            return self.data.pop(index)
         else:
-            return self.data.pop(elem)
+            return self.data.pop(index)
     #ENDkivesz
 
     def ures(self):
@@ -87,22 +87,48 @@ class Verem:
 
 
 def main():
-    v = Verem()      # üres verem létrehozása
-    print(v)         # [
-    print(v.ures())  # True
-    v.betesz(1)
-    v.betesz(4)
+    v = Verem()
+    l = []
     v.betesz(5)
-    print(v)         # [1 4 5
-    print(v.meret()) # 3
-    print(v.ures())  # False
-    x = v.kivesz()
-    print(f"x == {x}")         # 5
-    print(v)         # [1 4
-    v.kivesz()
-    v.kivesz()       # most már üres
-    x = v.kivesz()
-    print(x)         # None
+    v.betesz(8)
+    l.append(5)
+    l.append(8)
+    print(f"verem: {v}\nlist: {l}")
+    v.kiterjeszt([4, 5])
+    l.extend([4, 5])
+    print(f"verem: {v}\nlist: {l}")
+    v.beszur(2, 3)
+    l.insert(2, 3)
+    print(f"verem: {v}\nlist: {l}")
+    v.torol(4)
+    l.remove(4)
+    print(f"verem: {v}\nlist: {l}")
+    print(f"verem 3 sorszáma: {v.sorszam(3)}")
+    print(f"list index of 3: {l.index(3)}")
+    print(f"verem 5 előfordulasai száma: {v.szamlal(5)}")
+    print(f"list count of 5: {l.count(5)}")
+    vmasolat = v.masol()
+    print(vmasolat)
+    lcopy = l.copy()
+    print(lcopy)
+    v.forditva()
+    print(f"verem fordítva: {v}")
+    l.reverse()
+    print(f"list in reverse: {l}")
+    v.sorbarendez()
+    print(f"verem sorbarendezve: {v}")
+    l.sort()
+    print(f"list sort: {l}")
+    v.kivesz(3)
+    print(f"verem kivesz: {v}")
+    l.pop()
+    print(f"list pop: {l}")
+    print(f"üres a verem? {v.ures()}")
+    print(f"verem meret: {v.meret()}")
+    
+    v.kiurit()
+    l.clear()
+    print(f"verem: {v}\nlist: {l}")
 #ENDmain
     
     
