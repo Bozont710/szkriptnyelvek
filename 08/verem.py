@@ -60,7 +60,7 @@ class Verem:
 
     def kivesz(self, index=-1):
         """Eltávolítja az adott elemet, ha nincs megadva, akkor az utolsót"""
-        if index == 0 and self.ures():
+        if self.ures():
             return None
         elif index == 0:
             return self.data.pop(index)
@@ -87,6 +87,24 @@ class Verem:
 
 
 def main():
+    v = Verem()      # üres verem létrehozása
+    print(v)         # [
+    print(v.ures())  # True
+    v.betesz(1)
+    v.betesz(4)
+    v.betesz(5)
+    print(v)         # [1 4 5
+    print(v.meret()) # 3
+    print(v.ures())  # False
+    x = v.kivesz()
+    print(x)         # 5
+    print(v)         # [1 4
+    v.kivesz()
+    v.kivesz()       # most már üres
+    x = v.kivesz()
+    print(x)         # None (jelezzük pl. így, hogy egy üres veremből akarunk kivenni)
+
+
     v = Verem()
     l = []
     v.betesz(5)

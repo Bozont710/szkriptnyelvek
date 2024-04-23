@@ -22,7 +22,7 @@ class Sor:
         self.data.clear()
     #ENDkiurit
 
-    def masol(self, name):
+    def masol(self):
         """Egy másolatot készít a sorról"""
         name = self.data.copy()
         return name
@@ -86,7 +86,7 @@ class Sor:
     #ENDforgat
 
     def maxhossz(self):
-        return self.data.maxlen()
+        return self.data.maxlen
     #ENDmaxhossz
 
     def meret(self):
@@ -106,22 +106,76 @@ class Sor:
 
 
 def main():
-    s = Sor()      # üres verem létrehozása
-    print(s)         # [
-    print(s.ures())  # True
-    s.betesz(1)
-    s.betesz(4)
+    s = Sor()
+    q = deque([])
     s.betesz(5)
-    print(s)         # [1 4 5
-    print(s.meret()) # 3
-    print(s.ures())  # False
-    x = s.kivesz()
-    print(f"x == {x}")         # 5
-    print(s)         # [1 4
+    s.betesz(8)
+    q.append(5)
+    q.append(8)
+    print(s)
+    print(q)
+    s.beteszbal(7)
+    q.appendleft(7)
+    print(s)
+    print(q)
+    
+    smasol = s.masol()
+    print(smasol)
+    qcopy = q.copy()
+    print(qcopy)
+    s.betesz(5)
+    q.append(5)
+    print(s.szamlal(5))
+    print(q.count(5))
+
+    s.kiterjeszt([3, 5])
+    q.extend([3, 5])
+    print(s)
+    print(q)
+    s.kiterjesztbal([2, 2])
+    q.extendleft([2, 2])
+    print(s)
+    print(q)
+
+    print(s.sorszam(8))
+    print(q.index(8))
+    s.beszur(1, 9)
+    q.insert(1, 9)
+    print(s)
+    print(q)
     s.kivesz()
-    s.kivesz()       # most már üres
-    x = s.kivesz()
-    print(x)         # None
+    q.pop()
+    print(s)
+    print(q)
+    s.kiveszbal()
+    q.popleft()
+    print(s)
+    print(q)
+    
+    s.torol(3)
+    q.remove(3)
+    print(s)
+    print(q)
+    s.forditva()
+    q.reverse()
+    print(s)
+    print(q)
+    s.forgat(2)
+    q.rotate(2)
+    print(s)
+    print(q)
+
+    print(s.maxhossz())
+    print(q.maxlen)    
+    print(s.meret())
+    print(len(q))
+    print(s.ures())
+    s.kiurit()
+    print(s)
+    print(s.ures())
+    q.clear()
+    print(q)
+    
 #ENDmain
     
     
