@@ -12,6 +12,10 @@ class Myqueue:
         self.data.append(elem)
     #ENDappend
 
+    def pop(self):
+        return self.data.pop()
+    #ENDpop
+
     def popleft(self):
         return self.data.pop(0)
     #ENDpopleft
@@ -49,6 +53,8 @@ def main():
     print(f"deque: {que}")
     print(myq.popleft())
     print(que.popleft())
+    print(myq.pop())
+    print(que.pop())
     print(f"myque: {myq}")
     print(f"deque: {que}")
     print(myq.is_empty())
