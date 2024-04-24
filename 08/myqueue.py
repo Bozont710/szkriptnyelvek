@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
-
-from collections import deque
  
+from collections import deque
+
 class Myqueue:
     def __init__(self):
         self.data = []
@@ -36,13 +36,21 @@ class Myqueue:
 
 def main():
     myq = Myqueue()
+    que = deque([])
     myq.append(1)
     myq.append(3)
     myq.append(5)
     myq.append(9)
-    print(myq)
+    que.append(1)
+    que.append(3)
+    que.append(5)
+    que.append(9)
+    print(f"myque: {myq}")
+    print(f"deque: {que}")
     print(myq.popleft())
-    print(myq)
+    print(que.popleft())
+    print(f"myque: {myq}")
+    print(f"deque: {que}")
     print(myq.is_empty())
     print(myq.size())
 #ENDmain
