@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 
-def main():
+def main() -> None:
     while True:
         try:
             num1 = float(input("1. num: "))
@@ -16,7 +16,7 @@ def main():
         except EOFError:
             quit()
         except ZeroDivisionError:
-            print("Xou can't divide with zero, try again")
+            print("You can't divide with zero, try again")
             
 #ENDmain
     

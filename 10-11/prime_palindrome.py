@@ -11,7 +11,7 @@ def is_palindrome(num):
 #ENDpalindrome
 
 
-def prime_palindrome(num):   
+def prime_palindrome(num: int) -> int:   
     while True:
         if is_palindrome(num):
             if  is_prime_mr(num):
@@ -24,7 +24,7 @@ def prime_palindrome(num):
 #ENDprime_palindrome
 
 
-def main():
+def main() -> None:
     num1 = 31
     num2 = 130
     num3 = 131

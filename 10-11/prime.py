@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-def is_prime_mr(n):
+def is_prime_mr(n: int) -> bool:
     """
     Miller-Rabin primality test.
  
@@ -52,11 +52,7 @@ def is_prime_mr(n):
     return True # no base tested showed n as composite
 
 
-def main():
-    pass
-#ENDmain
-    
-    
 if __name__ == "__main__":
-    main()
+    primes = [n for n in range(1,11) if is_prime_mr(n)]
+    print(primes)
 #ENDif

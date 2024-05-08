@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 
+from typing import List
 
-def sort_data(data):
+def sort_data(data: List) -> List:
     for n in data:
         (a, b, c, d) = n
         n = (d, a, b, c)
@@ -11,7 +12,7 @@ def sort_data(data):
 #ENDsort_data
 
 
-def sort_users(data):
+def sort_users(data: List) -> List:
     data2 = []
     data3 = []
     for n in data:
@@ -27,7 +28,7 @@ def sort_users(data):
 #ENDsort_users
 
 
-def sort_matrix(matrix):
+def sort_matrix(matrix: List) -> List:
     data = []
     data2 = []
     for n in matrix:
@@ -38,11 +39,11 @@ def sort_matrix(matrix):
         for m in matrix:
             if n == m[-1]:
                 data2.append(m)
-    print(data2)
+    return data2
 #ENDsort_matrix
 
 
-def main():
+def main() -> None:
     print("1.")
     print("-"*20)
     data = [ 
